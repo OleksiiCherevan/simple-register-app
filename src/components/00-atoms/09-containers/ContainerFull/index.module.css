@@ -1,0 +1,32 @@
+.container {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 328px;
+    max-width: 1170px;
+    padding: 0;
+}
+
+@media screen and (max-width: 1290px) {
+    .container {
+        
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+       
+    }
+}
