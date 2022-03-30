@@ -4,8 +4,9 @@ import ContainerMain from "../components/00-atoms/09-containers/ContainerMain";
 import ContainerFull from "../components/00-atoms/09-containers/ContainerFull";
 
 import Header from "components/01-molecules/00-Header/Header";
-import Enter from "components/01-molecules/01-Scenes/ScreenEnter";
-import Employes from "components/01-molecules/01-Scenes/ScreenEmployes";
+import EnterScreen from "components/01-molecules/01-Screens/ScreenEnter";
+import EmployesScreen from "components/01-molecules/01-Screens/ScreenEmployes";
+import ScreenFormRegister from "components/01-molecules/01-Screens/ScreenFormRegister";
 
 const App = () => {
     return (
@@ -13,11 +14,17 @@ const App = () => {
             <Header></Header>
 
             <ContainerFull>
-                <Enter></Enter>
+                <EnterScreen></EnterScreen>
             </ContainerFull>
 
+            <div className={style["separate140px"]}></div>
+
             <ContainerMain>
-                <Employes></Employes>
+                <EmployesScreen></EmployesScreen>
+
+                <div className={style["separate140px"]}></div>
+
+                <ScreenFormRegister></ScreenFormRegister>
             </ContainerMain>
         </div>
     );

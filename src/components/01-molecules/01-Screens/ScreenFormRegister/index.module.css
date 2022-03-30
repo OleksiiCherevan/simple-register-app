@@ -8,14 +8,10 @@
 }
 
 .cards {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%; */
+    
 }
 
-.show-more {
+.sign-up {
     padding-top: 50px;
     
     display: flex;

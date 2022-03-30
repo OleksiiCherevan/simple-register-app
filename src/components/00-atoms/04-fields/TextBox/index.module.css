@@ -1,0 +1,137 @@
+.text-box {
+    position: relative;
+
+    height: 54px;
+    width: 328px;
+
+    display: flex;
+    align-items: center;
+
+    background: #f8f8f8;
+    border: 1px solid #d0cfcf;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+}
+
+.label {
+    position: absolute;
+
+    background-color: inherit;
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #7e7e7e;
+}
+
+.input {
+    border: none;
+    position: absolute;
+
+    height: 66%;
+    width: calc(100% - 32px);
+    padding: 0 16px;
+
+    /* background-color: #f8f8f8; */
+    background-color: transparent;
+
+    font-size: 16px;
+    line-height: 26px;
+
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.input:focus {
+    background-color: transparent;
+    border: 0px solid;
+    outline-width: 0;
+
+    /* background-color: #f8f8f8; */
+}
+
+.label_start {
+    animation: ease-in-out input-start 0.3s;
+    animation-fill-mode: forwards;
+    left: 16px;
+}
+
+.label_stop {
+    animation: ease-in-out input-stop 0.3s;
+    animation-fill-mode: forwards;
+    left: 16px;
+}
+
+.error {
+    position: absolute;
+    padding: 0 5px;
+
+    left: 11px;
+    bottom: -18px;
+
+    font-size: 12px;
+    line-height: 14px;
+    background-color: inherit;
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+
+    color: #7e7e7e;
+}
+
+.error_color {
+    color: #CB3D40;
+}
+
+.error_border {
+    border: #CB3D40 1px solid;
+}
+
+@keyframes input-start {
+    0% {
+        left: 16px;
+        top: 11px;
+        padding: 0;
+        font-size: 16px;
+        line-height: 26px;
+        background-color: transparent;
+    }
+    100% {
+        padding: 0 5px;
+
+        left: 11px;
+        top: -8px;
+
+        font-size: 12px;
+        line-height: 14px;
+        background-color: inherit;
+    }
+}
+
+@keyframes input-stop {
+    0% {
+        padding: 0 5px;
+        top: -8px;
+        font-size: 12px;
+        line-height: 14px;
+        background-color: inherit;
+    }
+    100% {
+        padding: 0;
+        top: 13px;
+        font-size: 16px;
+        line-height: 26px;
+        background-color: transparent;
+    }
+}
