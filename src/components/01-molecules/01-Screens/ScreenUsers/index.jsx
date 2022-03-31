@@ -5,6 +5,7 @@ import ButtonPrimary from "components/00-atoms/01-buttons/ButtonPrimary";
 
 import Preloader from "components/00-atoms/00-meta/Preloader";
 import { useEffect, useState } from "react";
+const OPEN_CARDS = 6;
 
 const ScreenUsers = (props) => {
     const {} = props;
@@ -32,7 +33,12 @@ const ScreenUsers = (props) => {
                     setIsError(true);
                 }
             });
-    }, []);
+    }, [count]);
+
+    const onShowMore = () => {
+
+        setCount(count + OPEN_CARDS)
+    }
 
     
 
@@ -51,7 +57,7 @@ const ScreenUsers = (props) => {
                     </div>
 
                     <div className={style["show-more"]}>
-                        <ButtonPrimary >
+                        <ButtonPrimary onClick={onShowMore}>
                             Show more
                         </ButtonPrimary>
                     </div>

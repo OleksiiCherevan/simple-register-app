@@ -18,6 +18,8 @@
 }
 
 .image {
+    width: 70px;
+    height: 70px;
     margin-bottom: 20px;
     width: 100%;
 }

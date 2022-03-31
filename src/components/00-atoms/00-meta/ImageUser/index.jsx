@@ -1,12 +1,25 @@
-import style from './index.module.css'
+import style from "./index.module.css";
 
-import BLANK_USER from 'assets/images/photo-cover.svg'
+import BLANK_USER from "assets/images/photo-cover.svg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+  function checkImage(imageSrc, good, bad) {
+    var img = new Image();
+    img.onload = good; 
+    img.onerror = bad;
+    img.src = imageSrc;
+}
 
 const ImageUser = (props) => {
-    const {image = BLANK_USER, name='User photo'} = props
+    const { image, name = "User photo" } = props;
 
-  return (
-    <img className={style['photo']} src={image} alt={name}/>
-  )
-}
-export default ImageUser
+    const [userImage, setUserImage] = useState(BLANK_USER);
+
+    useEffect(() => {
+        checkImage(image, ()=> {setUserImage(image)}, ()=> {setUserImage(BLANK_USER)})
+    }, [image]);
+    return <img className={style["photo"]} src={userImage} alt={name} />;
+};
+
+export default ImageUser;

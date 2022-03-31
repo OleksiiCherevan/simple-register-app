@@ -1,0 +1,42 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+    width: 100%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    
+    /* width: 60%; */
+
+    top: 25px;
+    left: 45%;
+
+    padding: 3px 16px;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.87); 
+
+    color: #ffffff;
+    text-align: center;
+}
+
+.tooltiptext > div {
+    /* width: auto; */
+    
+    text-overflow:initial;
+    white-space: initial;
+    overflow: hidden;
+    
+    word-break: break-word; 
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
