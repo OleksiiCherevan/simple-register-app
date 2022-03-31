@@ -4,8 +4,8 @@ import style from "./index.module.css";
 const TextBox = (props) => {
     const {
         placeholder = "label",
-        pattern = '',
         errorMessage = "Pattern error",
+        pattern = "",
         onChange = () => {},
     } = props;
 
@@ -16,7 +16,7 @@ const TextBox = (props) => {
         let value = event.target.value;
         setText(value);
 
-        if (pattern && (!text || pattern.test(text) === false)) {
+        if (pattern && (!value || pattern.test(value) === false)) {
             setIsError(true);
         } else {
             setIsError(false);
@@ -24,7 +24,7 @@ const TextBox = (props) => {
     };
 
     useEffect(() => {
-        onChange(text);
+        onChange({ text, isCorrect: !isError && text });
     }, [text]);
 
     return (

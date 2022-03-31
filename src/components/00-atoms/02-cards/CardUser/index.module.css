@@ -1,4 +1,6 @@
 .card {
+    position: relative;
+
     box-sizing: border-box;
     padding: 20px;
 
@@ -17,24 +19,33 @@
 
 .image {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .name {
     margin-bottom: 20px;
+    width: 100%;
+}
+
+.fixed-size {
+    /* width: 80%; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .info {
-
+    width: 100%;
 }
 
 .position {
-
+    width: 100%;
 }
 
 .email {
-
+    width: 100%;
 }
 
 .phone {
-    
+    width: 100%;
 }

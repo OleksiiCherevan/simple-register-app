@@ -1,7 +1,7 @@
 import style from "./index.module.css";
 
 const LabelFixed = (props) => {
-    const { children, size = 29 } = props;
+    const { children, size = 20 } = props;
 
     return <div className={style["label"]}>
         {trimText(children, size)}

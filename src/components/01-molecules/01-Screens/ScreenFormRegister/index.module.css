@@ -7,13 +7,36 @@
     margin-bottom: 50px;
 }
 
-.cards {
-    
+.register {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sign-up {
+    width: 100%;
     padding-top: 50px;
     
     display: flex;
     justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    min-width: 328px;
+    max-width: 380px;
+}
+
+.upload-image {
+    width: 100%;
+    padding-top: 47px;
+}
+
+.position {
+    margin-top: 11px;
 }

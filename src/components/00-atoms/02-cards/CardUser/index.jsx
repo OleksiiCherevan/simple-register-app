@@ -17,17 +17,21 @@ const CardUser = (props) => {
                 <ImageUser image={image}></ImageUser>
             </div>
             <div className={style["name"]}>
-                <LabelFixed>{name}</LabelFixed>
+                {/* <LabelFixed>{name}</LabelFixed> */}
+                    <div className={style['fixed-size']}>{name}</div>
             </div>
             <div className={style["info"]}>
                 <div className={style["position"]}>
-                    <LabelFixed>{position}</LabelFixed>
+                    {/* <LabelFixed>{position}</LabelFixed> */}
+                    <div className={style['fixed-size']}>{position}</div>
                 </div>
                 <div className={style["email"]}>
-                    <LabelFixed>{email}</LabelFixed>
+                    {/* <LabelFixed>{email}</LabelFixed> */}
+                    <div className={style['fixed-size']}>{email}</div>
                 </div>
                 <div className={style["phone"]}>
-                    <LabelFixed>{phone}</LabelFixed>
+                    {/* <LabelFixed>{phone}</LabelFixed> */}
+                    <div className={style['fixed-size']}>{phone}</div>
                 </div>
             </div>
         </div>

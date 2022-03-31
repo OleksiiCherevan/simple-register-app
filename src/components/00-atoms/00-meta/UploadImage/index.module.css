@@ -1,0 +1,39 @@
+.label {
+    cursor: pointer;
+
+    height: 54px;
+    width: 100%;
+    min-width: 328px;
+    max-width: 380px;
+
+    display: flex;
+}
+
+.button {
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.87);
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+
+    display: flex;
+    align-items: center;
+}
+
+.button-label {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #d0cfcf;
+    box-sizing: border-box;
+    
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+

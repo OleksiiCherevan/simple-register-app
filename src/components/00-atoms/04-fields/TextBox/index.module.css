@@ -2,8 +2,12 @@
     position: relative;
 
     height: 54px;
-    width: 328px;
 
+    width: 100%;
+    min-width: 328px;
+    max-width: 380px;
+
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
 
