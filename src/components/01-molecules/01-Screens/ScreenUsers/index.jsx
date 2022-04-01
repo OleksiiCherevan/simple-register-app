@@ -16,6 +16,8 @@ const ScreenUsers = (props) => {
     const [count, setCount] = useState(6);
     const [users, setUsers] = useState([]);
 
+    const [isAllUsers, setIsAllUsers] = useState(false);
+
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
@@ -31,14 +33,19 @@ const ScreenUsers = (props) => {
                 if (data.success) {
                     setUsers(data.users);
                     setIsLoading(false);
+                    setIsAllUsers(count * page > data["total_users"]);
                 } else {
                     setIsError(true);
+                    setIsAllUsers(true);
                 }
             });
-    }, [count]);
+    }, [count, page]);
 
     const onShowMore = () => {
-        setCount(count + OPEN_CARDS);
+        // setCount(count + OPEN_CARDS);
+        setUsers([])
+        setIsLoading(true)
+        setPages(page +1)
     };
 
     if (isLoading) {
@@ -54,11 +61,15 @@ const ScreenUsers = (props) => {
                     <UsersCard users={users}></UsersCard>
                 </div>
                 <HSeparator50></HSeparator50>
-                <div className={style["show-more"]}>
-                    <ButtonPrimary onClick={onShowMore}>
-                        Show more
-                    </ButtonPrimary>
-                </div>
+                {!isAllUsers ? (
+                    <div className={style["show-more"]}>
+                        <ButtonPrimary onClick={onShowMore}>
+                            Show more
+                        </ButtonPrimary>
+                    </div>
+                ) : (
+                    ""
+                )}
             </div>
         </>
     );
