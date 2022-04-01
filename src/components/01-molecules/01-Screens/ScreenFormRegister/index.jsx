@@ -13,7 +13,6 @@ import ScreenSuccess from "components/01-molecules/01-Screens/ScreenSuccess";
 
 
 import axios from "axios";
-import { refreshPage } from "assets/js/utils";
 
 const FormRegister = (props) => {
     const {onSetUsers = () => {}} = props;
@@ -79,7 +78,6 @@ const FormRegister = (props) => {
             .catch(function (error) {
                 console.log('Something bad :(', error);
                 alert(`Something bad... ${error}`)
-                refreshPage()
             });
     };
 
@@ -97,8 +95,7 @@ const FormRegister = (props) => {
         return <Preloader></Preloader>;
     }
     return (
-        <div className={style["register"]}>
-            <a  id="register"></a>
+        <div className={style["register"]} id="register">
             <h1 className={style["header"]}>Working with GET request</h1>
             <HSeparator50></HSeparator50>
             <form className={style["form"]}>

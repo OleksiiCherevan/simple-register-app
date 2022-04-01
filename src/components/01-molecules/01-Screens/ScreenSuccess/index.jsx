@@ -1,20 +1,8 @@
 import style from "./index.module.css";
-import { refreshPage } from "assets/js/utils";
-import { useEffect } from "react";
 
-const ScreenSuccess = (props) => {
-    const { onClick = () => {}, onLoading = () => {} } = props;
-
-    useEffect(() => {
-        onLoading()
-    }, [])
-    const onFuncClick = () => {
-        onClick();
-        refreshPage();
-    };
-
+const ScreenSuccess = () => {
     return (
-        <div className={style["success-container"]} onClick={onFuncClick}>
+        <div className={style["success-container"]}>
             <div className={style["success"]}>
                 <h1 className={style["header"]}>
                     User successfully registered

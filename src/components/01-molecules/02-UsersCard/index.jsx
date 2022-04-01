@@ -1,9 +1,7 @@
 import style from "./index.module.css";
 import CardUser from "components/00-atoms/02-cards/CardUser";
 
-import { useEffect, useState } from "react";
-
-const EmployesCards = (props) => {
+const UsersCards = (props) => {
     const { users = [] } = props;
 
     return (
@@ -23,4 +21,4 @@ const EmployesCards = (props) => {
     );
 };
 
-export default EmployesCards;
+export default UsersCards;
