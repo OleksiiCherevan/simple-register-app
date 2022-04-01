@@ -45,7 +45,6 @@ const FormRegister = (props) => {
 
     const onUserSend = (event) => {
         setIsLoading(true);
-        console.log(positionId, userInfo.name, userInfo.email, userInfo.phone, imageInfo.image, token);
         var formData = new FormData();
         formData.append("position_id", positionId);
         formData.append("name", userInfo.name);
@@ -76,7 +75,6 @@ const FormRegister = (props) => {
                 }
             })
             .catch(function (error) {
-                console.log('Something bad :(', error);
                 alert(`Something bad... ${error}`)
             });
     };
