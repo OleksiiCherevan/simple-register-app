@@ -20,7 +20,7 @@ const ScreenUsers = (props) => {
 
     return (
         <>
-            <div className={style["employes"]}>
+            <div className={style["users"]} id='users'>
                 <h1 className={style["header"]}>Working with GET request</h1>
                 <HSeparator50></HSeparator50>
                 <div className={style["cards"]}>
