@@ -30,7 +30,7 @@ const UploadImage = (props) => {
         onSelect({
             image: selectedImageInfo.image,
             isCorrect:
-                (!imageName && !selectedImageInfo.isCorrect) ||
+                // (!imageName && !selectedImageInfo.isCorrect) ||
                 selectedImageInfo.isCorrect,
         });
     }, [selectedImageInfo, imageName]);
