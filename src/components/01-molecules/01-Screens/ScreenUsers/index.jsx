@@ -7,45 +7,12 @@ import Preloader from "components/00-atoms/00-meta/Preloader";
 import { useEffect, useState } from "react";
 import HSeparator50 from "components/00-atoms/05-separators/HSeparator50";
 import HSeparator140 from "components/00-atoms/05-separators/HSeparator140";
-const OPEN_CARDS = 6;
 
 const ScreenUsers = (props) => {
-    const {} = props;
-
-    const [page, setPages] = useState(1);
-    const [count, setCount] = useState(6);
-    const [users, setUsers] = useState([]);
-
-    const [isAllUsers, setIsAllUsers] = useState(false);
-
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(false);
-
-    useEffect(() => {
-        fetch(
-            `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=${count}`
-        )
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                console.log(data);
-                if (data.success) {
-                    setUsers(data.users);
-                    setIsLoading(false);
-                    setIsAllUsers(count * page > data["total_users"]);
-                } else {
-                    setIsError(true);
-                    setIsAllUsers(true);
-                }
-            });
-    }, [count, page]);
+    const {users, isLoading, isAllUsers, onClick=()=>{}} = props;    
 
     const onShowMore = () => {
-        // setCount(count + OPEN_CARDS);
-        setUsers([])
-        setIsLoading(true)
-        setPages(page +1)
+        onClick();
     };
 
     if (isLoading) {

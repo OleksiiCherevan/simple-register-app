@@ -2,7 +2,7 @@ import style from "./index.module.css";
 import { useEffect, useState } from "react";
 import ButtonRadio from "components/00-atoms/01-buttons/ButtonRadioPrimary";
 
-const Pasitions = (props) => {
+const Positions = (props) => {
     const { header, onChange = () => {} } = props;
 
     const [positions, setPositions] = useState([]);
@@ -45,4 +45,4 @@ const Pasitions = (props) => {
     );
 };
 
-export default Pasitions;
+export default Positions;

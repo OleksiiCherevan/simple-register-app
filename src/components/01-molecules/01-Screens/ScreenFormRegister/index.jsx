@@ -16,7 +16,7 @@ import axios from "axios";
 import { refreshPage } from "assets/js/utils";
 
 const FormRegister = (props) => {
-    const {} = props;
+    const {onSetUsers = () => {}} = props;
 
     const [token, setToken] = useState("");
     const [isCorrect, setIsCorrect] = useState(false);
@@ -71,6 +71,7 @@ const FormRegister = (props) => {
                     // process success response
                     setIsLoading(false);
                     setIsSuccess(true);
+                    onSetUsers()
                 } else {
                     // proccess server errors
                 }

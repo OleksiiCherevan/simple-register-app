@@ -1,9 +1,13 @@
 import style from "./index.module.css";
 import { refreshPage } from "assets/js/utils";
+import { useEffect } from "react";
 
 const ScreenSuccess = (props) => {
-    const { onClick = () => {} } = props;
+    const { onClick = () => {}, onLoading = () => {} } = props;
 
+    useEffect(() => {
+        onLoading()
+    }, [])
     const onFuncClick = () => {
         onClick();
         refreshPage();
