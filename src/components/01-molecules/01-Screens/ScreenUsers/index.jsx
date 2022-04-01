@@ -22,7 +22,7 @@ const ScreenUsers = (props) => {
         <>
             <div className={style["employes"]}>
                 <h1 className={style["header"]}>Working with GET request</h1>
-                <HSeparator140></HSeparator140>
+                <HSeparator50></HSeparator50>
                 <div className={style["cards"]}>
                     <UsersCard users={users}></UsersCard>
                 </div>
