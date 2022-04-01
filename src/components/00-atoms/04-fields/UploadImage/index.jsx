@@ -106,7 +106,7 @@ const UploadImage = (props) => {
                     </div>
                 </div>
             </label>
-            {!selectedImageInfo.isCorrect ? (
+            {(imageName && !selectedImageInfo.isCorrect) ? (
                 <div className={`${style["error"]} ${style["error_color"]}`}>
                     {errorMessage}
                 </div>
