@@ -1,4 +1,4 @@
-import ImageUser from "components/00-atoms/00-meta/ImageUser";
+import ImageUser from "components/00-atoms/06-card-part/ImageUser";
 import Tooltip from "components/00-atoms/00-meta/Tooltip";
 import LabelFixed from "components/00-atoms/03-labels/LabelFixed";
 import style from "./index.module.css";

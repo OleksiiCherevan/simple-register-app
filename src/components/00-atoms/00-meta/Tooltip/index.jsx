@@ -5,7 +5,7 @@ const Tooltip = (props) => {
     return (
         <div className={style["tooltip"]}>
             {children}
-            <span class={style["tooltiptext"]}>{children}</span>
+            <span className={style["tooltiptext"]}>{children}</span>
         </div>
     );
 };

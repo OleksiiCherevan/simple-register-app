@@ -1,7 +1,5 @@
 import style from "./index.module.css";
-function refreshPage() {
-    window.location.reload(false);
-}
+import { refreshPage } from "assets/js/utils";
 
 const ScreenSuccess = (props) => {
     const { onClick = () => {} } = props;

@@ -1,10 +1,5 @@
-.employes {
-    margin-top: 140px;
-}
-
 .header {
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .register {
@@ -16,7 +11,6 @@
 
 .sign-up {
     width: 100%;
-    padding-top: 50px;
     
     display: flex;
     justify-content: center;

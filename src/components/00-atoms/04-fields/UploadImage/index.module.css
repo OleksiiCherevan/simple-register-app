@@ -37,3 +37,15 @@
     padding-right: 16px;
 }
 
+.text_default {
+    color: #7E7E7E;
+}
+
+.text_selected {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.border-error {
+    border-color: #CB3D40;
+}
+

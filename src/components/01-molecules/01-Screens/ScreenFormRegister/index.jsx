@@ -1,16 +1,19 @@
 import style from "./index.module.css";
-
-import ButtonPrimary from "components/00-atoms/01-buttons/ButtonPrimary";
-import ButtonRadioPrimary from "components/00-atoms/01-buttons/ButtonRadioPrimary";
 import { useEffect, useState } from "react";
-import TextBox from "components/00-atoms/04-fields/TextBox";
+
+
+import Preloader from "components/00-atoms/00-meta/Preloader";
+import ButtonPrimary from "components/00-atoms/01-buttons/ButtonPrimary";
+import UploadImage from "components/00-atoms/04-fields/UploadImage";
+import HSeparator50 from "components/00-atoms/05-separators/HSeparator50";
+
+import UserSignUpForm from "components/01-molecules/03-Forms/UserRegistration";
 import Pasitions from "components/01-molecules/03-Forms/Positions";
-import UserSignUpForm from "components/01-molecules/03-Forms/UserSignUpForm";
-import UploadImage from "components/00-atoms/00-meta/UploadImage";
+import ScreenSuccess from "components/01-molecules/01-Screens/ScreenSuccess";
+
 
 import axios from "axios";
-import Preloader from "components/00-atoms/00-meta/Preloader";
-import ScreenSuccess from "../ScreenSuccess";
+import { refreshPage } from "assets/js/utils";
 
 const FormRegister = (props) => {
     const {} = props;
@@ -19,14 +22,14 @@ const FormRegister = (props) => {
     const [isCorrect, setIsCorrect] = useState(false);
     const [userInfo, setUserInfo] = useState({ isCorrect: false });
     const [positionId, setPosition] = useState("");
-    const [image, setImage] = useState({isCorrect: true});
+    const [imageInfo, setImageInfo] = useState({ isCorrect: true });
 
     const [isSuccess, setIsSuccess] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setIsCorrect(userInfo.isCorrect, image.isCorrect);
-    }, [userInfo, image]);
+        setIsCorrect(userInfo.isCorrect && imageInfo.isCorrect);
+    }, [userInfo, imageInfo]);
 
     useEffect(() => {
         fetch("https://frontend-test-assignment-api.abz.agency/api/v1/token")
@@ -43,13 +46,13 @@ const FormRegister = (props) => {
 
     const onUserSend = (event) => {
         setIsLoading(true);
-        
+        console.log(positionId, userInfo.name, userInfo.email, userInfo.phone, imageInfo.image, token);
         var formData = new FormData();
         formData.append("position_id", positionId);
         formData.append("name", userInfo.name);
         formData.append("email", userInfo.email);
         formData.append("phone", userInfo.phone);
-        formData.append("photo", image.image);
+        formData.append("photo", imageInfo.image);
 
         axios
             .post(
@@ -63,7 +66,7 @@ const FormRegister = (props) => {
                 }
             )
             .then(function (response) {
-                let data = response.data
+                let data = response.data;
                 console.log(data);
                 if (data.success) {
                     // process success response
@@ -74,11 +77,12 @@ const FormRegister = (props) => {
                 }
             })
             .catch(function (error) {
-                // proccess network errors
+                console.log('Something bad :(', error);
+                alert(`Something bad... ${error}`)
+                refreshPage()
             });
     };
 
-   
     if (isSuccess) {
         return (
             <ScreenSuccess
@@ -95,7 +99,7 @@ const FormRegister = (props) => {
     return (
         <div className={style["register"]}>
             <h1 className={style["header"]}>Working with GET request</h1>
-
+            <HSeparator50></HSeparator50>
             <form className={style["form"]}>
                 <UserSignUpForm onChange={setUserInfo}></UserSignUpForm>
 
@@ -107,9 +111,11 @@ const FormRegister = (props) => {
                 </div>
 
                 <div className={style["upload-image"]}>
-                    <UploadImage onSelect={setImage}></UploadImage>
+                    <UploadImage onSelect={setImageInfo}></UploadImage>
                 </div>
             </form>
+
+            <HSeparator50></HSeparator50>
 
             <div className={style["sign-up"]}>
                 <ButtonPrimary isDisable={!isCorrect} onClick={onUserSend}>

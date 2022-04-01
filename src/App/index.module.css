@@ -4,11 +4,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-bottom: 100px;
 }
 
-.separate140px {
-    margin-top: 140px;
-    width: 100%;
-}

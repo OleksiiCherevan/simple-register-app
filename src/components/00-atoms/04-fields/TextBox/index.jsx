@@ -10,32 +10,32 @@ const TextBox = (props) => {
     } = props;
 
     const [text, setText] = useState("");
-    const [isError, setIsError] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(true);
 
     const onChangeText = (event) => {
         let value = event.target.value;
         setText(value);
 
         if (pattern && (!value || pattern.test(value) === false)) {
-            setIsError(true);
+            setIsCorrect(false);
         } else {
-            setIsError(false);
+            setIsCorrect(true);
         }
     };
 
     useEffect(() => {
-        onChange({ text, isCorrect: !isError && text });
+        onChange({ text, isCorrect: isCorrect && text });
     }, [text]);
 
     return (
         <div
             className={`${style["text-box"]} ${
-                isError ? style["error_border"] : ""
+                !isCorrect ? style["error_border"] : ""
             }`}
         >
             <label
                 className={`${style["label"]} ${
-                    isError ? style["error_color"] : ""
+                    !isCorrect ? style["error_color"] : ""
                 } ${text ? `${style["label_start"]} ` : style["label_stop"]}`}
             >
                 {placeholder}
@@ -45,16 +45,11 @@ const TextBox = (props) => {
                 type="text"
                 className={style["input"]}
                 value={text}
-                // pattern={pattern}
                 onChange={onChangeText}
             ></input>
 
-            {isError ? (
-                <div
-                    className={`${style["error"]} ${
-                        isError ? style["error_color"] : ""
-                    }`}
-                >
+            {!isCorrect ? (
+                <div className={`${style["error"]} ${style["error_color"]}`}>
                     {errorMessage}
                 </div>
             ) : null}

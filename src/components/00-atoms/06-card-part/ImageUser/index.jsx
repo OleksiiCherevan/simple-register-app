@@ -4,9 +4,9 @@ import BLANK_USER from "assets/images/photo-cover.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-  function checkImage(imageSrc, good, bad) {
+function checkImage(imageSrc, good, bad) {
     var img = new Image();
-    img.onload = good; 
+    img.onload = good;
     img.onerror = bad;
     img.src = imageSrc;
 }
@@ -17,7 +17,15 @@ const ImageUser = (props) => {
     const [userImage, setUserImage] = useState(BLANK_USER);
 
     useEffect(() => {
-        checkImage(image, ()=> {setUserImage(image)}, ()=> {setUserImage(BLANK_USER)})
+        checkImage(
+            image,
+            () => {
+                setUserImage(image);
+            },
+            () => {
+                setUserImage(BLANK_USER);
+            }
+        );
     }, [image]);
     return <img className={style["photo"]} src={userImage} alt={name} />;
 };
