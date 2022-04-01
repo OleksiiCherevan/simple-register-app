@@ -1,7 +1,5 @@
 import style from "./index.module.css";
 
-import ContainerMain from "components/00-atoms/09-containers/ContainerMain";
-
 import Logo from "components/00-atoms/00-meta/Logo";
 import ButtonPrimary from "components/00-atoms/01-buttons/ButtonPrimary";
 

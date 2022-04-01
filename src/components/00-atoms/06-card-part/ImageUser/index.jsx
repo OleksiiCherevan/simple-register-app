@@ -2,7 +2,6 @@ import style from "./index.module.css";
 
 import BLANK_USER from "assets/images/photo-cover.svg";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 function checkImage(imageSrc, good, bad) {
     var img = new Image();

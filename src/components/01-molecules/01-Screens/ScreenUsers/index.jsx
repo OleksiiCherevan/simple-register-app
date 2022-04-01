@@ -4,7 +4,6 @@ import UsersCard from "components/01-molecules/02-UsersCard";
 import ButtonPrimary from "components/00-atoms/01-buttons/ButtonPrimary";
 
 import Preloader from "components/00-atoms/00-meta/Preloader";
-import { useEffect, useState } from "react";
 import HSeparator50 from "components/00-atoms/05-separators/HSeparator50";
 import HSeparator140 from "components/00-atoms/05-separators/HSeparator140";
 

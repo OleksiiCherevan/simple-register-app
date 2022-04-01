@@ -1,5 +1,5 @@
 import style from "./index.module.css";
-import { createRef, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const DEFAULT_NAME = "Upload your photo";
 
@@ -26,7 +26,6 @@ const UploadImage = (props) => {
     };
 
     useEffect(() => {
-       
         onSelect({
             image: selectedImageInfo.image,
             isCorrect:
