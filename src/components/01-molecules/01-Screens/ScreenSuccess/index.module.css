@@ -1,13 +1,13 @@
 .success-container {
     cursor: pointer;
 
-    position: fixed;
+    /* position: fixed;
     display: block;
     top: 0;
     left: 0;
 
     height: 100%;
-    width: 100%;
+    width: 100%; */
 
     background-color: #f8f8f8;
     display: flex;

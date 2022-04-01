@@ -1,7 +1,7 @@
 import style from './index.module.css'
 
 
-const ContainerMain = (props) => {
+const ContainerFull = (props) => {
     const {children} = props
   return (
     <div className={style['container']}>
@@ -9,4 +9,4 @@ const ContainerMain = (props) => {
     </div>
   )
 }
-export default ContainerMain
+export default ContainerFull

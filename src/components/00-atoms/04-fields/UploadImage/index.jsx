@@ -4,11 +4,12 @@ import { createRef, useEffect, useRef, useState } from "react";
 const DEFAULT_NAME = "Upload your photo";
 
 const UploadImage = (props) => {
-    const { id = "actual-btn", onSelect = () => {} } = props;
+    const { id = "actual-btn", onSelect = () => {}, errorMessage ="Photo has bad format..." } = props;
 
     const [selectedImageInfo, setSelectedImageInfo] = useState({
         isCorrect: false,
     });
+
     const [imageName, setImageName] = useState("");
 
     const isWeightValid = (size, maxSize = 5) => {
@@ -66,7 +67,7 @@ const UploadImage = (props) => {
     };
 
     return (
-        <div>
+        <div className={style['upload-image']}>
             <input
                 type="file"
                 accept=".jpeg,.jpg"
@@ -105,6 +106,11 @@ const UploadImage = (props) => {
                     </div>
                 </div>
             </label>
+            {!selectedImageInfo.isCorrect ? (
+                <div className={`${style["error"]} ${style["error_color"]}`}>
+                    {errorMessage}
+                </div>
+            ) : null}
         </div>
     );
 };

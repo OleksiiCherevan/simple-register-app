@@ -8,14 +8,18 @@ import ButtonPrimary from "components/00-atoms/01-buttons/ButtonPrimary";
 const Header = () => {
     return (
         <div className={style["header"]}>
-                <div className={style["content"]}>
-                    <Logo></Logo>
+            <div className={style["content"]}>
+                <Logo></Logo>
 
-                    <div className={style["nav"]}>
+                <div className={style["nav"]}>
+                    <a href="#users">
                         <ButtonPrimary>Users</ButtonPrimary>
+                    </a>
+                    <a href="#register">
                         <ButtonPrimary>Sign up</ButtonPrimary>
-                    </div>
+                    </a>
                 </div>
+            </div>
         </div>
     );
 };

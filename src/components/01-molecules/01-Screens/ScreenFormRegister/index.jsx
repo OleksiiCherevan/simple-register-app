@@ -67,7 +67,6 @@ const FormRegister = (props) => {
             )
             .then(function (response) {
                 let data = response.data;
-                console.log(data);
                 if (data.success) {
                     // process success response
                     setIsLoading(false);
@@ -98,6 +97,7 @@ const FormRegister = (props) => {
     }
     return (
         <div className={style["register"]}>
+            <a  id="register"></a>
             <h1 className={style["header"]}>Working with GET request</h1>
             <HSeparator50></HSeparator50>
             <form className={style["form"]}>

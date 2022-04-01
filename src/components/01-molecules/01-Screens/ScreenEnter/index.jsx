@@ -18,7 +18,9 @@ const Enter = () => {
                         should also be excited to learn, as the world of
                         Front-End Development keeps evolving.
                     </div>
-                    <ButtonPrimary>Sign up</ButtonPrimary>
+                    <a href="#register">
+                        <ButtonPrimary>Sign up</ButtonPrimary>
+                    </a>
                 </div>
             </div>
         </>

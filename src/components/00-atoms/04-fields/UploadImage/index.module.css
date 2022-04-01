@@ -1,3 +1,7 @@
+.upload-image {
+    position: relative;
+}
+
 .label {
     cursor: pointer;
 
@@ -49,3 +53,28 @@
     border-color: #CB3D40;
 }
 
+.error {
+    position: absolute;
+    padding: 0 5px;
+
+    left: 11px;
+    bottom: -18px;
+
+    font-size: 12px;
+    line-height: 14px;
+    background-color: inherit;
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+
+    color: #7e7e7e;
+}
+
+.error_color {
+    color: #CB3D40;
+}
+
+.error_border {
+    border: #CB3D40 1px solid;
+}
